@@ -33,7 +33,9 @@ int	main(void)
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 }
-
+/*
+test2
+*/
 
 /*
 cc -lX11 -lXext main.c minilibx-linux/libmlx.a 
