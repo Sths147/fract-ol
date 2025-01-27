@@ -11,6 +11,7 @@ SRCFOLDER = src/
 OBJFOLDER = objs/
 
 SRC_LIST = main.c \
+	init.c \
 
 SRC = $(addprefix $(SRCFOLDER), $(SRC_LIST))
 

@@ -6,25 +6,30 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:50:37 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/21 13:55:40 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:59:48 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-typedef struct	s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
+typedef struct	s_img
+{
+	void	*img_ptr;
+	char	*pixels_ptr;
+	int		bpp;
 	int		endian;
-}				t_data;
+	int		line_len;
+}				t_img;
 
-typedef struct	s_vars {
-	void	*mlx;
-	void	*win;
-}				t_vars;
+typedef struct s_fractal
+{
+	void	*mlx_connexion; // connection au server
+	void	*mlx_window;
+	t_img	img;
+	double 	escape_value; 
+	int		quality;
+}				t_fractal;
 
 typedef struct	s_complex
 {
