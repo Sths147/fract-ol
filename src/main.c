@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:51:09 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/22 14:17:09 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:09:43 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 		|| (ac == 4 && !ft_strncmp(av[1], "julia", 6)))
 	{
 		init_fractal(&fractal, av[1]);
-		//fractal_render(&fractal);
+		fractal_render(&fractal);
 		mlx_loop(fractal.mlx_connexion);
 		write(1, "ok\n", 3);
 		return (0);

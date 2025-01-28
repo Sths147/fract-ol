@@ -1,16 +1,12 @@
 #include "fract-ol.h"
 
+void	data_init(t_fractal *fractal);
+
 void	malloc_error(void)
 {
 	perror("malloc error: ");
 	exit(EXIT_FAILURE);
 }
-
-double	scale(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
-{
-	return ((new_max - new_min) * (unscaled_num - old_min) / (old_max - old_min) + new_min);
-}
-
 
 void	init_fractal(t_fractal *fractal, char *title)
 {
@@ -34,7 +30,7 @@ void	init_fractal(t_fractal *fractal, char *title)
 	}
 	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.img_ptr, &fractal->img.bpp, &fractal->img.line_len, &fractal->img.endian);
 	// events_init(fractal);
-	// data_init(fractal);
+	data_init(fractal);
 }
 
 void	data_init(t_fractal *fractal)

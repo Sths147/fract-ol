@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:50:37 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/27 16:59:48 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:12:30 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_fractal
 	void	*mlx_window;
 	t_img	img;
 	double 	escape_value; 
-	int		quality;
+	size_t		quality;
 }				t_fractal;
 
 typedef struct	s_complex

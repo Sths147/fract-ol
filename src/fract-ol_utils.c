@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 15:43:31 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/27 14:09:24 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:40:43 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_complex	iterate(t_complex number, size_t scale)
 	double		tmp;
 
 	i = 0;
-	new.x = 0;
-	new.y = 0;
+	new.x = 0.0;
+	new.y = 0.0;
 	while (i++ < scale)
 	{
 		tmp = (new.x * new.x) - (new.y * new.y) + number.x;
@@ -30,9 +30,9 @@ t_complex	iterate(t_complex number, size_t scale)
 	return (new);
 }
 
-double	map(double unscaled_num, double new_min, double new_max, double old_max)
+double	map(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
 {
-	return ((new_max - new_min) * unscaled_num / old_max + new_min);
+	return (((new_max - new_min) * (unscaled_num - old_min) / (old_max - old_min) + new_min));
 }
 
 t_complex	sum_complex(t_complex z1, t_complex z2)

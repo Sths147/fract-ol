@@ -12,6 +12,8 @@ OBJFOLDER = objs/
 
 SRC_LIST = main.c \
 	init.c \
+	fractal.c \
+	fract-ol_utils.c \
 
 SRC = $(addprefix $(SRCFOLDER), $(SRC_LIST))
 
