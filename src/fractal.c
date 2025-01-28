@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:17:53 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/28 14:46:09 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:35:04 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 	z.x = 0;
 	z.y = 0;
 
-	c.x = map(x, -2, +2, 0, WIDTH);
-	c.y = map(x, +2, -2, 0, HEIGHT);
+	c.x = map(x, -2, +2, 0, WIDTH) + fractal->shift_x;
+	c.y = map(y, +2, -2, 0, HEIGHT) + fractal->shift_y;
 	i = 0;
 	
 	/*
@@ -38,12 +38,11 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		{	
 			color = map(i, BLACK, WHITE, 0, fractal->quality);
 			my_mlx_pixel_put(&fractal->img, x, y, color);
-			printf("x: %f, y: %f\n", z.x, z.y);
 			return ;
 		}
 		i++;
 	}
-	my_mlx_pixel_put(&fractal->img, x, y, RED);
+	my_mlx_pixel_put(&fractal->img, x, y, WHITE);
 }
 
 void	fractal_render(t_fractal *fractal)

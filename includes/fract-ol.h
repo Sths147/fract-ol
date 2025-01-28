@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:26:19 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/28 14:40:02 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:06:36 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <unistd.h>
 #include <X11/keysym.h>
 #include <X11/cursorfont.h>
+#include <X11/X.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -42,5 +43,6 @@ t_complex	square_complex(t_complex z);
 void	data_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 t_complex	iterate(t_complex number, size_t scale);
+void	events_init(t_fractal *fractal);
 
 #endif
