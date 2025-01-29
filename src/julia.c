@@ -5,6 +5,7 @@ void	init_julia(t_fractal *fractal, char *title, char *real, char *imagin)
 {
 	fractal->x_init = atodbl(real);
 	fractal->y_init = atodbl(imagin);
+	fractal->title = title;
 	fractal->mlx_connexion = mlx_init();
 	if (!fractal->mlx_connexion)
 		malloc_error();

@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:17:53 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/29 14:54:37 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/29 16:03:54 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 	z.x = (map(x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
 	z.y = (map(y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
 	
-	c = z;
-	if (check_cardioid(z.x, z.y))
-		return (my_mlx_pixel_put(&fractal->img, x, y, BLACK));
+	if (!ft_strncmp(fractal->title, "mandelbrot", 11))
+	{	
+		c = z;
+		if (check_cardioid(z.x, z.y))
+			return (my_mlx_pixel_put(&fractal->img, x, y, BLACK));
+	}
+	else
+	{	
+		c.x = fractal->x_init;
+		c.y = fractal->y_init;
+	}
 	i = 0;
 	while (i < fractal->quality)
 	{

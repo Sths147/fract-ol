@@ -10,6 +10,7 @@ void	malloc_error(void)
 
 void	init_fractal(t_fractal *fractal, char *title)
 {
+	fractal->title = title;
 	fractal->mlx_connexion = mlx_init();
 	if (!fractal->mlx_connexion)
 		malloc_error();
