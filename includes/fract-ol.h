@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:26:19 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/28 16:06:36 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/29 15:48:21 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,15 @@
 void	malloc_error(void);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void	init_fractal(t_fractal *fractal, char *title);
-double	map(double unscaled_num, double new_min, double old_min, double new_max, double old_max);
+double	map(double unscaled_num, double new_min, double new_max, double old_max);
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
 void	data_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 t_complex	iterate(t_complex number, size_t scale);
 void	events_init(t_fractal *fractal);
+double	atodbl(char *nptr);
+int	check_dbl(char *nptr);
+void	init_julia(t_fractal *fractal, char *title, char *real, char *imagin);
 
 #endif

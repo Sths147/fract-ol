@@ -2,7 +2,7 @@ NAME = fract-ol
 
 CC = cc 
 
-CFLAGS = -Wall -Wextra -Werror -lX11 -lXext -g3
+CFLAGS = -Wall -Wextra -Werror -lX11 -lXext -lm -O3
 
 INC = -Iincludes
 
@@ -14,6 +14,7 @@ SRC_LIST = main.c \
 	init.c \
 	fractal.c \
 	fract-ol_utils.c \
+	julia.c
 
 SRC = $(addprefix $(SRCFOLDER), $(SRC_LIST))
 
