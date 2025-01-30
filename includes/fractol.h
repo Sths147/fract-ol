@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:26:19 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/30 14:49:31 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:28:28 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 # include "structs.h"
-# include <errno.h>
-# include <stdio.h>
-# include <math.h>
 # include <X11/X.h>
+# include <X11/keysym.h>
+# include <errno.h>
+# include <math.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <X11/keysym.h>
 
 # define WIDTH 800
 # define HEIGHT 800
@@ -32,6 +32,7 @@
 int			check_dbl(char *nptr);
 void		malloc_error(void);
 void		data_init(t_fractal *fractal);
+void		destroy_img(t_fractal *fractal);
 void		events_init(t_fractal *fractal);
 void		fractal_render(t_fractal *fractal);
 void		init_fractal(t_fractal *fractal, char *title);

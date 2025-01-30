@@ -2,7 +2,9 @@ NAME = fract-ol
 
 CC = cc 
 
-CFLAGS = -Wall -Wextra -Werror -lX11 -lXext -lm -O3
+CFLAGS = -Wall -Wextra -Werror -O3
+
+MLXFLAGS = -lX11 -lXext -lm
 
 INC = -Iincludes
 
@@ -36,12 +38,12 @@ libft:
 	@$(MAKE) -s -C libft
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(INC) $(LIBS) -o $@
+	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) $(INC) $(LIBS) -o $@
 	@echo 'fract-ol created'
 
 $(OBJFOLDER)%.o: $(SRCFOLDER)%.c Makefile includes/* $(LIBS)
 	@mkdir -p $(dir $@)
-	$(CC) $(INC) -c $< -o $@
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
 	@$(MAKE) clean -s -C libft
