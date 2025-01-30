@@ -14,11 +14,12 @@ SRC_LIST = main.c \
 	init.c \
 	fractal.c \
 	fract-ol_utils.c \
-	julia.c
+	julia.c \
+	events.c
 
 SRC = $(addprefix $(SRCFOLDER), $(SRC_LIST))
 
-OBJS = $(patsubst $(SRCFOLDER), $(OBJFOLDER)%.o, $(SRC))
+OBJS = $(patsubst $(SRCFOLDER)%.c, $(OBJFOLDER)%.o, $(SRC))
 
 LIBS = libft/libft.a \
 	minilibx-linux/libmlx.a
@@ -28,7 +29,7 @@ all : git mlx libft $(NAME)
 git :
 	@git submodule update --init --recursive --remote
 
-mlx : 
+mlx :
 	@$(MAKE) -s -C minilibx-linux
 
 libft:
@@ -40,7 +41,7 @@ $(NAME): $(OBJS)
 
 $(OBJFOLDER)%.o: $(SRCFOLDER)%.c Makefile includes/* $(LIBS)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	$(CC) $(INC) -c $< -o $@
 
 clean:
 	@$(MAKE) clean -s -C libft
@@ -54,4 +55,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re git libft mlx 
+.PHONY: all clean fclean re git libft mlx

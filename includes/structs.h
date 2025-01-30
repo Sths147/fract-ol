@@ -6,14 +6,14 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:50:37 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/29 14:57:27 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/30 13:31:45 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*img_ptr;
 	char	*pixels_ptr;
@@ -36,7 +36,7 @@ typedef struct s_fractal
 	size_t	quality;
 }				t_fractal;
 
-typedef struct	s_complex
+typedef struct s_complex
 {
 	double	x;
 	double	y;
