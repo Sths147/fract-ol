@@ -6,7 +6,7 @@
 /*   By: sithomas <sithomas@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:51:09 by sithomas          #+#    #+#             */
-/*   Updated: 2025/01/30 16:39:50 by sithomas         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:43:23 by sithomas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	init_julia(t_fractal *fractal, char *title, char *real, char *imagin)
 	fractal->img.pixels_ptr = mlx_get_data_addr(fractal->img.img_ptr,
 			&fractal->img.bpp, &fractal->img.line_len, &fractal->img.endian);
 	if (!fractal->img.pixels_ptr)
-		return(free(fractal->img.img_ptr), destroy_img(fractal));
+		return (free(fractal->img.img_ptr), destroy_img(fractal));
 	events_init(fractal);
 	data_init(fractal);
 }
