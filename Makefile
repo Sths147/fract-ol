@@ -1,4 +1,4 @@
-NAME = fract-ol
+NAME = fractol
 
 CC = cc 
 
